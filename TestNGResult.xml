@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="nopCommercenRegessionSuite">
+  <parameter name="Browser" value = "chrome"></parameter>
+  <!--<parameter name="Browser" value = "FireFox"></parameter>-->
+  <!--<parameter name="Browser" value = "IE"></parameter>-->
+  <test name="RegessionTest">
+    <classes>
+      <class name="Tests.UserRegisteandLogInOutWorkFlowTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

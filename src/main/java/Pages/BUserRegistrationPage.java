@@ -36,6 +36,9 @@ public class BUserRegistrationPage extends PagesBase{
 	@FindBy(className ="result")
 	public WebElement SucMessage;
 	
+	@FindBy(xpath = "/html/body/div[6]/div[3]/div/div/div/div[2]/form/div[1]/ul/li")
+	public WebElement FailMessage;
+	
 	@FindAll({
 		@FindBy(linkText = "Log out"),
 		@FindBy(className = "ico-logout"),

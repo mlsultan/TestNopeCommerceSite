@@ -14,9 +14,21 @@ public void UserRegisteSuc() { HomeObject = new AUserHomePage(driver);
 HomeObject.OpenRegistrationPage();
 RegistrationObject = new BUserRegistrationPage(driver);
 RegistrationObject.UserRegistrationPage("Muammad", "Sultan","selenum.test222222@gmail.com", "12345678");
-Assert.assertTrue(RegistrationObject.SucMessage.getText().contains("Your registration completed")); }
+Assert.assertTrue(RegistrationObject.SucMessage.getText().contains("Your registration completed"));
+Assert.assertTrue(RegistrationObject.FailMessage.getText().contains("The specified email already exists"));
+}
 
-@Test(dependsOnMethods= {"UserCanRegisterSuccssfully"}) 
+@Test
+public void ReturneMessages() {
+	if (RegistrationObject.SucMessage.getText().contains("Your registration completed")) {
+		System.out.println("Your registration completed");
+	}
+	else if (RegistrationObject.FailMessage.getText().contains("The specified email already exists")) {
+		System.out.println("The specified email already exists");
+	}
+}
+
+@Test(dependsOnMethods= {"ReturneMessages"}) 
 public void
 RegisteredUserCanLogout() { RegistrationObject.UserLogOut(); }
 
